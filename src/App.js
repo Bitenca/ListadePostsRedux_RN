@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxPromise from 'redux-promise';
@@ -12,12 +11,10 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 const store = createStoreWithMiddleware(reducers); // create app state
 
-const App = () => {
-    return(
+const App = () => (
         <Provider store={store} >
             <Router />
         </Provider>
     );
-};
 
 export default App;
